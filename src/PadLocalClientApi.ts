@@ -752,7 +752,6 @@ export class PadLocalClientApi extends PadLocalClientPlugin {
     if (options) {
       request.setOptions(options);
     }
-
     if (payload instanceof pb.SnsSendMomentText) {
       request.setText(payload);
     } else if (payload instanceof pb.SnsSendMomentImages) {
@@ -766,6 +765,14 @@ export class PadLocalClientApi extends PadLocalClientPlugin {
     });
     return response.getMoment()!;
   }
+
+  async snsSendMomentText(
+    idempotentId: string,
+    payload: string,
+    options?: pb.SnsSendMomentOptions
+  ): Promise<pb.SnsMoment> {
+		return this.snsSendMoment(idempotentId, new pb.SnsSendMomentText().setText(payload), options)
+	}
 
   async snsForwardMoment(
     idempotentId: string,
