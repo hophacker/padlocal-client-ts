@@ -670,6 +670,31 @@ message GetChatRoomMembersResponse {
   repeated ChatRoomMember member = 1;
 }
 
+message RoomMemberPayloadRequest {
+  string id = 1;
+  string member_id = 2;
+}
+
+enum RoomMemberJoinSceneType { // 类型枚举
+  ROOM_MEMBER_JOIN_SCENE_TYPE_UNKNOWN     = 0;
+  ROOM_MEMBER_JOIN_SCENE_TYPE_ADD         = 1;
+  ROOM_MEMBER_JOIN_SCENE_TYPE_INVITE_LINK = 2;
+  ROOM_MEMBER_JOIN_SCENE_TYPE_QRCODE      = 3;
+  ROOM_MEMBER_JOIN_SCENE_TYPE_OTHER       = 4;
+}
+
+
+message RoomMemberPayloadResponse {
+  string id                          = 1;
+  string room_alias                  = 2; // 联系人在群内的别名（群备注）
+  string inviter_id                  = 3; // 邀请者id
+  string avatar                      = 4; // 头像
+  string name                        = 5; // 名称
+  string additional_info             = 6;
+  double join_time                   = 7;
+  RoomMemberJoinSceneType join_scene = 8;
+}
+
 message ChatRoomMember {
   string userName = 1;
   string nickName = 2;

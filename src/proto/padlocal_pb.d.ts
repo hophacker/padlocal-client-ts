@@ -3304,6 +3304,70 @@ export namespace GetChatRoomMembersResponse {
     }
 }
 
+export class RoomMemberPayloadRequest extends jspb.Message { 
+    getId(): string;
+    setId(value: string): RoomMemberPayloadRequest;
+    getMemberId(): string;
+    setMemberId(value: string): RoomMemberPayloadRequest;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): RoomMemberPayloadRequest.AsObject;
+    static toObject(includeInstance: boolean, msg: RoomMemberPayloadRequest): RoomMemberPayloadRequest.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: RoomMemberPayloadRequest, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): RoomMemberPayloadRequest;
+    static deserializeBinaryFromReader(message: RoomMemberPayloadRequest, reader: jspb.BinaryReader): RoomMemberPayloadRequest;
+}
+
+export namespace RoomMemberPayloadRequest {
+    export type AsObject = {
+        id: string,
+        memberId: string,
+    }
+}
+
+export class RoomMemberPayloadResponse extends jspb.Message { 
+    getId(): string;
+    setId(value: string): RoomMemberPayloadResponse;
+    getRoomAlias(): string;
+    setRoomAlias(value: string): RoomMemberPayloadResponse;
+    getInviterId(): string;
+    setInviterId(value: string): RoomMemberPayloadResponse;
+    getAvatar(): string;
+    setAvatar(value: string): RoomMemberPayloadResponse;
+    getName(): string;
+    setName(value: string): RoomMemberPayloadResponse;
+    getAdditionalInfo(): string;
+    setAdditionalInfo(value: string): RoomMemberPayloadResponse;
+    getJoinTime(): number;
+    setJoinTime(value: number): RoomMemberPayloadResponse;
+    getJoinScene(): RoomMemberJoinSceneType;
+    setJoinScene(value: RoomMemberJoinSceneType): RoomMemberPayloadResponse;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): RoomMemberPayloadResponse.AsObject;
+    static toObject(includeInstance: boolean, msg: RoomMemberPayloadResponse): RoomMemberPayloadResponse.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: RoomMemberPayloadResponse, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): RoomMemberPayloadResponse;
+    static deserializeBinaryFromReader(message: RoomMemberPayloadResponse, reader: jspb.BinaryReader): RoomMemberPayloadResponse;
+}
+
+export namespace RoomMemberPayloadResponse {
+    export type AsObject = {
+        id: string,
+        roomAlias: string,
+        inviterId: string,
+        avatar: string,
+        name: string,
+        additionalInfo: string,
+        joinTime: number,
+        joinScene: RoomMemberJoinSceneType,
+    }
+}
+
 export class ChatRoomMember extends jspb.Message { 
     getUsername(): string;
     setUsername(value: string): ChatRoomMember;
@@ -6048,6 +6112,14 @@ export enum ZombieStatue {
     STRANGER = 0,
     FRIEND = 1,
     ZOMBIE = 2,
+}
+
+export enum RoomMemberJoinSceneType {
+    ROOM_MEMBER_JOIN_SCENE_TYPE_UNKNOWN = 0,
+    ROOM_MEMBER_JOIN_SCENE_TYPE_ADD = 1,
+    ROOM_MEMBER_JOIN_SCENE_TYPE_INVITE_LINK = 2,
+    ROOM_MEMBER_JOIN_SCENE_TYPE_QRCODE = 3,
+    ROOM_MEMBER_JOIN_SCENE_TYPE_OTHER = 4,
 }
 
 export enum AddChatRoomMemberType {
