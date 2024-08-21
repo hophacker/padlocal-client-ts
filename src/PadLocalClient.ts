@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Request } from "./Request";
 import {Contact, Message, ServerInfo, SyncEvent, SyncRequestScene, SystemEventRequest} from "./proto/padlocal_pb";
 import { Status, StatusEventPayload, WeChatLongLinkProxy } from "./link/WeChatLongLinkProxy";

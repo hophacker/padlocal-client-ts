@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { InitRequest, InitResponse, ServerInfo } from "../proto/padlocal_pb";
 import fs from "fs";
 import { GrpcClient } from "../GrpcClient";

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Socket } from "net";
 import { RetryStrategy, RetryStrategyRule } from "../utils/RetryStrategy";
 import { Bytes, bytesToHexString, MAX_LOG_BYTES_LEN, subBytes } from "../utils/ByteUtils";

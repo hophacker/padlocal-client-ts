@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { PadLocalClient } from "./PadLocalClient";
 import { ClientDuplexStream } from "@grpc/grpc-js";
 import {

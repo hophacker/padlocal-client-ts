@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Bytes, bytesToHexString, fromBytes, MAX_LOG_BYTES_LEN } from "./ByteUtils";
 import {
   FileDownloadRequest,

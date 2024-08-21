@@ -587,6 +587,15 @@ export class PadLocalClientApi extends PadLocalClientPlugin {
     });
   }
 
+  async getRoomMemberPayload(roomId: string, memberId: string): Promise<pb.RoomMemberPayloadResponse> {
+    checkRequiredField(roomId, "roomId");
+    checkRequiredField(memberId, "memberId");
+
+    return this.client.request(
+      new pb.RoomMemberPayloadRequest().setId(roomId).setMemberId(memberId)
+    );
+  }
+
   async getChatRoomMembers(roomId: string): Promise<pb.ChatRoomMember[]> {
     checkRequiredField(roomId, "roomId");
 
